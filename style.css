@@ -1,0 +1,625 @@
+/* style.css for AI Robot Website */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f7fa;
+    color: #222;
+}
+header {
+    background: #0a2540;
+    color: #fff;
+    padding: 0.5rem 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #00c3ff;
+}
+.hero {
+    text-align: center;
+    padding: 5rem 2rem 3rem 2rem;
+    background: linear-gradient(120deg, #00c3ff 0%, #0a2540 100%);
+    color: #fff;
+}
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+.btn {
+    background: #fff;
+    color: #0a2540;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.btn:hover {
+    background: #00c3ff;
+    color: #fff;
+}
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+}
+.about ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.feature-item {
+    flex: 1 1 250px;
+    background: #f4f7fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.contact-form input, .contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.contact-form button {
+    background: #0a2540;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #00c3ff;
+}
+.success {
+    color: #0a8a00;
+    margin-top: 1rem;
+}
+.error {
+    color: #c00;
+    margin-top: 1rem;
+}
+footer {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem 0;
+    color: #888;
+    background: none;
+    font-size: 1rem;
+}
+.motor-control, .action-log {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+    text-align: center;
+}
+.motor-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.motor-form button {
+    background: #0a2540;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.motor-form button:hover {
+    background: #00c3ff;
+}
+.action-log table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+.action-log th, .action-log td {
+    border: 1px solid #ddd;
+    padding: 0.7rem 1rem;
+    text-align: center;
+}
+.action-log th {
+    background: #f4f7fa;
+    font-weight: bold;
+}
+/* 3D Robot Styles */
+.robot-3d-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.robot-3d {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 2rem;
+    perspective: 800px;
+    transition: box-shadow 0.3s, background 0.3s;
+    background: linear-gradient(120deg, #f8fafd 60%, #e0f7fa 100%);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    overflow: visible;
+}
+.robot-head {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 80px;
+    height: 65px;
+    background: linear-gradient(120deg, #e0e0e0 60%, #b0b0b0 100%);
+    border-radius: 30px 30px 20px 20px;
+    transform: translateX(-50%) translateZ(30px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.robot-head::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    width: 36px;
+    height: 12px;
+    background: #222;
+    border-radius: 6px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px #00c3ff88;
+}
+.robot-head::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: #00c3ff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px #00c3ff88;
+}
+.robot-body {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    width: 110px;
+    height: 130px;
+    background: linear-gradient(120deg, #c0e0ff 60%, #0a2540 100%);
+    border-radius: 35px 35px 40px 40px;
+    transform: translateX(-50%) translateZ(10px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.robot-arm {
+    position: absolute;
+    top: 90px;
+    width: 38px;
+    height: 110px;
+    background: linear-gradient(120deg, #e0e0e0 60%, #b0b0b0 100%);
+    border-radius: 22px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    z-index: 0;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+.robot-arm.left {
+    left: -18px;
+    transform: rotate(-22deg) translateZ(5px);
+}
+.robot-arm.right {
+    right: -18px;
+    transform: rotate(22deg) translateZ(5px);
+}
+.robot-leg {
+    position: absolute;
+    top: 190px;
+    width: 32px;
+    height: 80px;
+    background: linear-gradient(120deg, #e0e0e0 60%, #b0b0b0 100%);
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+    z-index: 0;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+.robot-leg.left {
+    left: 38px;
+    transform: rotate(-8deg);
+}
+.robot-leg.right {
+    right: 38px;
+    transform: rotate(8deg);
+}
+.motor-form-3d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+}
+.motor-row {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+}
+.motor-form-3d button {
+    background: linear-gradient(120deg, #0a2540 60%, #00c3ff 100%);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
+    border-bottom: 3px solid #00c3ff44;
+}
+.motor-form-3d button:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.motor-form-3d button:hover {
+    background: linear-gradient(120deg, #00c3ff 60%, #0a2540 100%);
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px #00c3ff33;
+}
+/* Robot movement animations - more dynamic */
+.robot-3d.move-up {
+    animation: robot-move-up-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.move-down {
+    animation: robot-move-down-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.move-left {
+    animation: robot-move-left-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.move-right {
+    animation: robot-move-right-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.move-forward {
+    animation: robot-move-forward-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.move-backward {
+    animation: robot-move-backward-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+.robot-3d.stop {
+    animation: robot-stop-pro 0.7s cubic-bezier(.4,2,.6,1);
+}
+@keyframes robot-move-up-pro {
+    0% { transform: translateY(0) scale(1.0); }
+    30% { transform: translateY(-40px) scale(1.05); }
+    60% { transform: translateY(-20px) scale(1.03); }
+    100% { transform: translateY(0) scale(1.0); }
+}
+@keyframes robot-move-down-pro {
+    0% { transform: translateY(0) scale(1.0); }
+    30% { transform: translateY(40px) scale(0.97); }
+    60% { transform: translateY(20px) scale(0.99); }
+    100% { transform: translateY(0) scale(1.0); }
+}
+@keyframes robot-move-left-pro {
+    0% { transform: translateX(0) scale(1.0); }
+    30% { transform: translateX(-40px) scale(1.05); }
+    60% { transform: translateX(-20px) scale(1.03); }
+    100% { transform: translateX(0) scale(1.0); }
+}
+@keyframes robot-move-right-pro {
+    0% { transform: translateX(0) scale(1.0); }
+    30% { transform: translateX(40px) scale(1.05); }
+    60% { transform: translateX(20px) scale(1.03); }
+    100% { transform: translateX(0) scale(1.0); }
+}
+@keyframes robot-move-forward-pro {
+    0% { filter: brightness(1); }
+    30% { filter: brightness(1.4); }
+    60% { filter: brightness(1.2); }
+    100% { filter: brightness(1); }
+}
+@keyframes robot-move-backward-pro {
+    0% { filter: brightness(1); }
+    30% { filter: brightness(0.7); }
+    60% { filter: brightness(0.85); }
+    100% { filter: brightness(1); }
+}
+@keyframes robot-stop-pro {
+    0%, 100% { filter: grayscale(0); }
+    40% { filter: grayscale(1); }
+}
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.filter-form label {
+    font-weight: 500;
+    color: #0a2540;
+}
+.filter-form input[type="date"] {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+.filter-form button, .filter-form .btn {
+    background: #0a2540;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-left: 0.5rem;
+}
+.filter-form button:hover, .filter-form .btn:hover {
+    background: #00c3ff;
+    color: #fff;
+}
+.action-log table td a {
+    color: #c00;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.action-log table td a:hover {
+    color: #0a2540;
+}
+.action-log form button[name="delete_all"] {
+    background: #c00;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.action-log form button[name="delete_all"]:hover {
+    background: #a00;
+}
+.action-log.pro {
+    background: linear-gradient(120deg, #f4f7fa 60%, #e0f7fa 100%);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    border: 1.5px solid #e0e0e0;
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+}
+.action-log.pro h2 {
+    font-size: 2rem;
+    color: #0a2540;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.action-log .icon {
+    font-size: 1.5em;
+}
+.filter-form.pro .filter-row {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+.filter-form.pro label {
+    font-weight: 500;
+    color: #0a2540;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.filter-form.pro input[type="date"],
+.filter-form.pro input[type="time"] {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.filter-form.pro .btn.filter-btn {
+    background: #0a2540;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.filter-form.pro .btn.filter-btn:hover {
+    background: #00c3ff;
+}
+.filter-form.pro .btn.reset-btn {
+    background: #e0e0e0;
+    color: #0a2540;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.filter-form.pro .btn.reset-btn:hover {
+    background: #b0b0b0;
+}
+.delete-all-form {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+.delete-all-btn {
+    background: #c00;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.delete-all-btn:hover {
+    background: #a00;
+}
+.table-responsive {
+    overflow-x: auto;
+}
+.pro-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+.pro-table th, .pro-table td {
+    border: 1px solid #e0e0e0;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
+.pro-table th {
+    background: #e0f7fa;
+    font-weight: bold;
+    color: #0a2540;
+}
+.pro-table tr:nth-child(even) {
+    background: #f8fafd;
+}
+.delete-link {
+    color: #c00;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.delete-link:hover {
+    color: #0a2540;
+}
+.action-label {
+    display: inline-block;
+    padding: 0.3em 0.9em;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1em;
+    background: #e0e0e0;
+    color: #0a2540;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.action-label.action-stop { background: #ffe0e0; color: #c00; }
+.action-label.action-forward { background: #e0ffe0; color: #0a8a00; }
+.action-label.action-backward { background: #e0e0ff; color: #0033cc; }
+.action-label.action-up { background: #e0f7fa; color: #0097a7; }
+.action-label.action-down { background: #fffde0; color: #bfa600; }
+.action-label.action-left { background: #f0e0ff; color: #7c1fa0; }
+.action-label.action-right { background: #e0f0ff; color: #005fa3; }
+@media (max-width: 700px) {
+    nav ul {
+        gap: 1rem;
+    }
+    .feature-list {
+        flex-direction: column;
+    }
+    section {
+        padding: 1rem;
+    }
+    .motor-form {
+        flex-direction: column;
+    }
+    .motor-control, .action-log {
+        padding: 1rem;
+    }
+    .robot-3d {
+        width: 120px;
+        height: 180px;
+    }
+    .robot-head {
+        width: 45px;
+        height: 38px;
+    }
+    .robot-body {
+        width: 60px;
+        height: 70px;
+        top: 35px;
+    }
+    .robot-arm {
+        width: 18px;
+        height: 55px;
+        top: 45px;
+    }
+    .robot-leg {
+        width: 16px;
+        height: 40px;
+        top: 100px;
+    }
+    .action-log.pro {
+        padding: 1rem 0.2rem;
+    }
+    .pro-table th, .pro-table td {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.95em;
+    }
+    .filter-form.pro .filter-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
